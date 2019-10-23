@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   child: {fileID: 1373649371}
-  control: {fileID: 1419919116}
+  control: {fileID: 1213870107}
   jointLocation: {x: 0, y: 2, z: 1}
   jointOffset: {x: 0, y: 2, z: 1}
   angle: 0
@@ -1496,11 +1496,12 @@ MonoBehaviour:
   angle: 0
   lastAngle: 0
   limbVertexLocations:
-  - {x: -0.1, y: 0, z: 1}
-  - {x: -0.1, y: 1, z: 1}
-  - {x: 0.1, y: 1, z: 1}
-  - {x: 0.1, y: 0, z: 1}
-  material: {fileID: 0}
+  - {x: 1, y: 1, z: 1}
+  - {x: 0.5, y: 0, z: 1}
+  - {x: 0, y: 1, z: 1}
+  - {x: -0.5, y: 0, z: 1}
+  - {x: -1, y: 1, z: 1}
+  material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   mesh: {fileID: 0}
 --- !u!1 &1419919116
 GameObject:
@@ -2095,17 +2096,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   child: {fileID: 2144107849}
-  control: {fileID: 1213870107}
+  control: {fileID: 1806118874}
   jointLocation: {x: 0, y: 0, z: 1}
   jointOffset: {x: 0, y: 0, z: 0}
   angle: 0
   lastAngle: 0
   limbVertexLocations:
-  - {x: -1, y: -1, z: 1}
+  - {x: -1.5, y: -1, z: 1}
   - {x: -1, y: 0, z: 1}
+  - {x: 0, y: -1, z: 1}
   - {x: 1, y: 0, z: 1}
-  - {x: 1, y: -1, z: 1}
-  material: {fileID: 0}
+  - {x: 1.5, y: -1, z: 1}
+  material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   mesh: {fileID: 0}
 --- !u!1 &2086851138
 GameObject:
@@ -2226,7 +2228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   child: {fileID: 1330904667}
-  control: {fileID: 1806118874}
+  control: {fileID: 1419919116}
   jointLocation: {x: 0, y: 2, z: 1}
   jointOffset: {x: 0, y: 2, z: 1}
   angle: 0
@@ -2236,5 +2238,5 @@ MonoBehaviour:
   - {x: -0.25, y: 2, z: 1}
   - {x: 0.25, y: 2, z: 1}
   - {x: 0.25, y: 0, z: 1}
-  material: {fileID: 0}
+  material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   mesh: {fileID: 0}

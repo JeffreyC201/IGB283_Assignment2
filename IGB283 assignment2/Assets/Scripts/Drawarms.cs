@@ -54,14 +54,29 @@ public class Drawarms : MonoBehaviour
         mesh.Clear();
         mesh.vertices = limbVertexLocations;
 
-        mesh.colors = new Color[] {
+        if (limbVertexLocations.Length == 4)
+        {
+            mesh.triangles = new int[] { 0, 1, 2, 0, 2, 3 };
+
+            mesh.colors = new Color[] {
+            new Color(0f, 0f, 1f, 1.0f),
+            new Color(0f, 0f, 1f, 1.0f),
+            new Color(0f, 0f, 1f, 1.0f),
+            new Color(0f, 0f, 1f, 1.0f)
+        };
+        }
+        else if (limbVertexLocations.Length == 5)
+        {
+            mesh.triangles = new int[] { 0, 1, 2, 1, 3, 2, 3, 4, 2 };
+
+            mesh.colors = new Color[] {
+            new Color(0.8f, 0.3f, 0.3f, 1.0f),
             new Color(0.8f, 0.3f, 0.3f, 1.0f),
             new Color(0.8f, 0.3f, 0.3f, 1.0f),
             new Color(0.8f, 0.3f, 0.3f, 1.0f),
             new Color(0.8f, 0.3f, 0.3f, 1.0f)
         };
-
-        mesh.triangles = new int[] { 0, 1, 2, 0, 2, 3 };
+        }
 
     }
 
