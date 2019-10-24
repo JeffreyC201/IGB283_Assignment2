@@ -14,6 +14,8 @@ public class Drawarms : MonoBehaviour
     public float lastAngle;
     public Vector3[] limbVertexLocations;
 
+    public bool angleMovement;
+
     public Material material;
 
     public Mesh mesh;
@@ -149,10 +151,72 @@ public class Drawarms : MonoBehaviour
     void Update()
     {
         lastAngle = angle;
-        if (control != null)
+
+        if (child.gameObject.name == "Wrist")
         {
-            angle = control.GetComponent<Slider>().value;
+
+            if (angle < -85 * Mathf.Deg2Rad)
+            {
+                    angleMovement = true;
+            }
+            else if (angle > -35 * Mathf.Deg2Rad)
+            {
+                    angleMovement = false;
+            }
+
+            if (angleMovement == true)
+            {
+                    angle += Time.deltaTime;
+            }
+            else if (angleMovement == false)
+            {
+                    angle -= Time.deltaTime;
+            }
+
         }
+        else if (child.gameObject.name == "Upper arm")
+        {
+            if (angle < 10 * Mathf.Deg2Rad)
+            {
+                angleMovement = true;
+            }
+            else if (angle > 45 * Mathf.Deg2Rad)
+            {
+                angleMovement = false;
+            }
+
+            if (angleMovement == true)
+            {
+                angle += Time.deltaTime;
+            }
+            else if (angleMovement == false)
+            {
+                angle -= Time.deltaTime;
+            }
+        }
+
+        /*else if (child.gameObject.name == "Lower arm")
+        {
+            if (angle < -85 * Mathf.Deg2Rad)
+            {
+                angleMovement = true;
+            }
+            else if (angle > -35 * Mathf.Deg2Rad)
+            {
+                angleMovement = false;
+            }
+
+            if (angleMovement == true)
+            {
+                angle += Time.deltaTime;
+            }
+            else if (angleMovement == false)
+            {
+                angle -= Time.deltaTime;
+            }
+        }*/
+
+
         if (child != null)
         {
             child.GetComponent<Drawarms>().RotateAroundPoint(
